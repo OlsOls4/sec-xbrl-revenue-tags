@@ -1,0 +1,112 @@
+{
+  "version": "2026-11",
+  "description": "Standardised metric -> XBRL concepts in order of preference. For each period, take the first concept that has a value.",
+  "metrics": {
+    "Revenue": {
+      "concepts": [
+        "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+        "us-gaap:Revenues",
+        "us-gaap:SalesRevenueNet",
+        "us-gaap:RevenueFromContractWithCustomerIncludingAssessedTax",
+        "ifrs-full:Revenue"
+      ],
+      "note": "Pre-2018 filers mostly used Revenues or SalesRevenueNet; ASC 606 (2018+) moved most to RevenueFromContractWithCustomerExcludingAssessedTax. Banks and insurers often only report Revenues."
+    },
+    "CostOfRevenue": {
+      "concepts": [
+        "us-gaap:CostOfRevenue",
+        "us-gaap:CostOfGoodsAndServicesSold",
+        "us-gaap:CostOfGoodsSold",
+        "ifrs-full:CostOfSales"
+      ],
+      "note": "CostOfGoodsAndServicesSold is the most common since 2018."
+    },
+    "GrossProfit": {
+      "concepts": [
+        "us-gaap:GrossProfit",
+        "ifrs-full:GrossProfit"
+      ]
+    },
+    "ResearchAndDevelopment": {
+      "concepts": [
+        "us-gaap:ResearchAndDevelopmentExpense"
+      ]
+    },
+    "OperatingIncome": {
+      "concepts": [
+        "us-gaap:OperatingIncomeLoss",
+        "ifrs-full:ProfitLossFromOperatingActivities"
+      ]
+    },
+    "NetIncome": {
+      "concepts": [
+        "us-gaap:NetIncomeLoss",
+        "us-gaap:ProfitLoss",
+        "ifrs-full:ProfitLoss"
+      ],
+      "note": "NetIncomeLoss is attributable to the parent; ProfitLoss includes non-controlling interests (fallback only)."
+    },
+    "EpsBasic": {
+      "concepts": [
+        "us-gaap:EarningsPerShareBasic",
+        "ifrs-full:BasicEarningsLossPerShare"
+      ]
+    },
+    "EpsDiluted": {
+      "concepts": [
+        "us-gaap:EarningsPerShareDiluted",
+        "ifrs-full:DilutedEarningsLossPerShare"
+      ]
+    },
+    "TotalAssets": {
+      "concepts": [
+        "us-gaap:Assets",
+        "ifrs-full:Assets"
+      ]
+    },
+    "TotalLiabilities": {
+      "concepts": [
+        "us-gaap:Liabilities",
+        "ifrs-full:Liabilities"
+      ]
+    },
+    "StockholdersEquity": {
+      "concepts": [
+        "us-gaap:StockholdersEquity",
+        "ifrs-full:Equity"
+      ]
+    },
+    "CashAndEquivalents": {
+      "concepts": [
+        "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+        "ifrs-full:CashAndCashEquivalents"
+      ]
+    },
+    "LongTermDebt": {
+      "concepts": [
+        "us-gaap:LongTermDebtNoncurrent",
+        "us-gaap:LongTermDebt"
+      ],
+      "note": "LongTermDebtNoncurrent excludes the current portion; LongTermDebt includes it."
+    },
+    "OperatingCashFlow": {
+      "concepts": [
+        "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+        "ifrs-full:CashFlowsFromUsedInOperatingActivities"
+      ]
+    },
+    "CapitalExpenditure": {
+      "concepts": [
+        "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+        "ifrs-full:PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities"
+      ],
+      "note": "Reported as a positive payment amount."
+    },
+    "SharesOutstanding": {
+      "concepts": [
+        "dei:EntityCommonStockSharesOutstanding"
+      ],
+      "note": "dei cover-page value, reported as of a date (instant), not a period."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xbrl-key-financials"
+version = "0.1.0"
+description = "Map of SEC XBRL tags (Revenues, RevenueFromContractWithCustomer..., SalesRevenueNet...) to 16 key financials, with a helper that merges them into one series from EDGAR companyfacts."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+keywords = ["sec", "edgar", "xbrl", "us-gaap", "financial-statements", "fundamentals", "revenue", "companyfacts"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Topic :: Office/Business :: Financial :: Investment"]
+
+[project.urls]
+Homepage = "https://github.com/OlsOls4/sec-xbrl-revenue-tags"
+"Hosted version" = "https://apify.com/olsols4/sec-edgar-filings-financials"
+
+[project.scripts]
+xbrl-key-financials = "xbrl_key_financials.__main__:main"
+
+[tool.setuptools]
+packages = ["xbrl_key_financials"]
+
+[tool.setuptools.package-data]
+xbrl_key_financials = ["tags.json"]
